@@ -1,0 +1,123 @@
+<script type="text/ng-template" id="QuestionFormTemplate" ng-controller="QuestionFormController as $ctrl">
+    <style type="text/css">
+    .ui.modal {
+        top: 3%;
+    }
+
+    @media only screen and (max-height: 799px) {
+        .ui.modal {
+            top: 1%;
+        }
+    }
+
+
+    .preview-window .ngdialog-content {
+        background: none !important;
+    }
+
+    .ngdialog.ngdialog-theme-plain .ngdialog-content {
+        background: none!important;
+    }
+
+    .activeItem {
+        border-left-style: solid !important;
+        border-left-color: #8d8d9d !important;
+        box-shadow: none !important;
+        background: rgba(0,0,0,.05) !important;
+        color: rgba(0,0,0,.95) !important;
+        /*border: none !important;*/
+        margin: 0 0 .35714286em !important;
+        border-radius: .28571429rem!important;
+    }
+
+    .vividworknav {
+      /*width: 33.333%;*/
+      height: auto;
+      float: left;
+      padding: 0;
+      position: relative;
+      background-color: black;
+    }
+
+    .vividworknav:hover img {
+      opacity: 0.3;
+    }
+
+    .vividworknav:hover .work-text-content {
+      opacity: 1; 
+    }
+
+    .vividworknav img {
+      padding: 0;
+      width: 100%;
+      display: block;
+      opacity: 1;
+    }
+
+    .vividworknav img,
+    .work-text-content {
+      -webkit-transition: opacity 0.5s ease-out;
+      -moz-transition: opacity 0.5s ease-out;
+      -o-transition: opacity 0.5s ease-out;
+      transition: opacity 0.5s ease-out;
+    }
+
+    .work-text-content {
+      position: absolute;
+      color: black;
+      left: 0;
+      top: 25%;
+      right: 0;
+      bottom: 0;
+      text-align: center;
+      opacity: 0;
+      background-color: #e6e6e6;
+      margin-top: -15%;
+    }
+    </style>
+    <div class="ui modal large active" style="display: block !important;">
+        <div class="header">
+            Create question
+            <i class="close cancel icon" ng-click="$ctrl.cancel()" style="float: right;"></i>
+        </div>
+        <div class="ui grid" style="margin-left: 0%;max-height: 70vh;width: 100%;">
+            <div class="two column row" style="margin-top: 2%;overflow-y: scroll;">
+                <div class="three wide column">
+                    <div class="ui secondary vertical menu">
+                        <div class="item" ng-repeat="(key, value) in $ctrl.config" ng-class="{activeItem:(activeIndex?activeIndex==$index:$first)}" id="first_{{$index}}">
+                            <div class="content">
+                                <a class="header" ng-click="$ctrl.switchTab($index,value)"><i class="{{value.icon}}"></i> {{value.menuName}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nine wide column">
+                    <div class="ui grid three column row" style="margin-right: 0%;margin-bottom: 0%;">
+                        <!-- {{$ctrl.}}ng-repeat="(key, value) in $ctrl.selectedMenuItem" -->
+                        <div class="column" ng-repeat="(key, value) in $ctrl.selectedMenuItemData">
+                            <div class="ui card">
+                                <div class="content" style="background-color: #41474f;">
+                                    <div class="left floated meta" style="color: white;">{{value.header}}</div>
+                                </div>
+                                <div class="content vividworknav">
+                                    <img src="https://localhost:8081/org.ekstep.plugins.question-1.0/assets/mcqdefault.png"/>
+                                    <div class="work-text-content">
+                                        <p style="margin-top: 20%">Standard Multiple choice question.</p>
+                                        <i class="plus icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="actions" style="margin-top: 2%;">
+            <div class="ui buttons">
+                <button class="ui large button deny cancel" ng-click="cancel()">Cancel</button>
+                <div class="or"></div>
+                <button class="ui large positive button" ng-click="addToLesson()">Add to lesson</button>
+            </div>
+        </div>
+    </div>
+</script>

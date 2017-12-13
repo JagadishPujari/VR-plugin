@@ -1,0 +1,58 @@
+{
+    "id": "org.ekstep.plugins.question",
+    "ver": "1.0",
+    "author": "Jagadish",
+    "type": "plugin",
+    "title": "question", 
+    "description": "This plugin is an example plugin",
+    "editor": {
+        "main": "editor/plugin.js",
+        "dependencies": [
+            { "type": "js", "src": "editor/init.js" },
+            { "type": "js", "src": "editor/question.js" }
+        ],
+        "menu": [{
+            "id": "question",
+            "category": "main",
+            "type": "image",
+            "toolTip": "Add Question",
+            "title": "question",
+            "iconImage": "assets/question.png",
+            "onclick": {
+                 "id": "org.ekstep.plugins.question:showpopup",
+                "data": {
+                    "type": "roundrect",
+                    "x": 5,
+                    "y": 5,
+                    "fill": "#0000",
+                    "w": 90,
+                    "h": 90,
+                    "radius": 10,
+                    "stroke": "rgba(255, 255, 255, 255)",
+                    "strokeWidth": 1,
+                    "opacity": 0.01
+                }
+            }
+        }],
+        "init-data": {
+            "type": "rect",
+            "x": 10,
+            "y": 2,
+            "w": 80,
+            "h": 80,
+            "fill": "#DCDCDC"
+        },
+        "configManifest": [{}],
+        "help": {
+            "src": "editor/help.md",
+            "dataType": "text"
+        }
+    },
+    "renderer": {
+        "main": "renderer/plugin.js"
+    },
+    "icon": "assets/icon.png",
+    "languages": ["English"],
+    "categories": [""],
+    "keywords": [""]
+}

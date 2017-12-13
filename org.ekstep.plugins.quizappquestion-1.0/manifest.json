@@ -1,0 +1,45 @@
+{
+    "id": "org.ekstep.plugins.quizappquestion",
+    "ver": "1.0",
+    "author": "",
+    "type": "widget", 
+    "title": "org.ekstep.plugins.quizappquestion Plugin",
+    "description": "",
+    "publishedDate": "",
+    "editor": {
+        "main": "editor/plugin.js",
+        "dependencies": [
+            {
+                "type": "plugin",
+                "plugin": "org.ekstep.spectrum",
+                "ver": "1.0"
+            }
+        ],
+        "menu": [],
+        "help": {
+            "src": "editor/help.md",
+            "dataType": "text"
+        },
+        "init-data": {
+            "type": "circle",
+            "radius": 90,
+            "strokeWidth": 10,
+            "x": 10,
+            "y": 10,
+            "w": 10,
+            "h": 10,
+            "fill": "",
+            "stroke": "rgba(0,192,255,0.5)"
+        }
+    },
+    "renderer": 
+       {
+        "main": "renderer/plugin.js",
+        "dependencies": [
+        {
+            "type": "css",
+            "src": "renderer/style.css"
+        }
+        ]
+    }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "org.ekstep.examstudent",
+  "ver": "1.0",
+  "author": "Jagadish P",
+  "title": "Worksheet for exam Student",
+  "description": "Plugin to add question set exam to student",
+  "publishedDate": "",
+  "editor": {
+    "main": "editor/plugin.js",
+    "dependencies": [
+      
+    ],
+    "menu": [
+      {
+        "id": "exam.student",
+        "category": "main",
+        "type": "icon",
+        "toolTip": "Create exam",
+        "title": "Exam Work sheet creation",
+        "iconClass": "fa fa-user",
+        "onclick": {
+          "id": "org.ekstep.examstudent:addExamStudent"
+        }
+      }
+    ]
+  },
+  "renderer": {
+    "main": "renderer/plugin.js",
+    "dependencies": [
+      {
+        "type": "css",
+        "src": "renderer/style.css",
+        "scope": "all"
+      },
+      {
+        "type": "js",
+        "src": "renderer/student_ctrl.js",
+        "scope": "all"
+      }
+    ]
+  }
+}

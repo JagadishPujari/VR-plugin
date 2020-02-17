@@ -1,0 +1,29 @@
+.popup{
+  text-align: center;
+}
+table, th, td {
+  border: 1px solid black;
+}
+.box{
+  background-color: #d9d9d9;
+}
+
+.start_btn{
+  font-family: Montserrat-Bold;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+    width: 50%;
+    height: 50px;
+    border-radius: 25px;
+    background: #57b846;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+}
